@@ -1,1 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Details — College</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>STUDENT DETAILS</h1>
+      <p>College Website — Registration Form</p>
+    </header>
 
+    <div class="top-actions">
+      <a href="https://example.edu" target="_blank" rel="noopener">College Website</a>
+      <button id="openFormBtn" type="button">Registration Form</button>
+    </div>
+
+    <!-- Modal / Popup -->
+    <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+      <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="modal">
+        <header>
+          <h2 id="modalTitle">STUDENT FORM</h2>
+          <button class="close-btn" id="closeModalBtn" aria-label="Close form">✕</button>
+        </header>
+
+        <form id="studentForm">
+          <div class="grid">
+            <label for="nameInput">Name</label>
+            <input id="nameInput" name="name" type="text" placeholder="Enter Name" required>
+
+            <label for="ageInput">Age</label>
+            <input id="ageInput" name="age" type="number" placeholder="Enter Age" min="1" required>
+
+            <label>Gender</label>
+            <div class="gender-row">
+              <label><input type="radio" name="gender" value="Male"> Male</label>
+              <label><input type="radio" name="gender" value="Female"> Female</label>
+              <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+
+            <label for="courseSelect">Course</label>
+            <select id="courseSelect" name="course" required>
+              <option value="">Select a course</option>
+              <option>Python</option>
+              <option>Robotics</option>
+              <option>AI</option>
+              <option>Data Science</option>
+            </select>
+
+            <label for="emailInput">Email</label>
+            <input id="emailInput" name="email" type="email" placeholder="Enter Email" required>
+
+            <div class="save-row">
+              <button class="save-btn" id="saveBtn" type="submit">Save</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- Student table -->
+    <table id="studentTable" aria-label="Registered students">
+      <thead>
+        <tr>
+          <th>Name</th><th>Age</th><th>Course</th><th>Gender</th><th>Email</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- new rows appended here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
